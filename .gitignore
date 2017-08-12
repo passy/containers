@@ -1,0 +1,3 @@
+# Container image files.
+*.aci
+*.oci
