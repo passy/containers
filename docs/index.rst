@@ -10,6 +10,7 @@ Containers
 
    base
    zookeeper
+   rust
 
 
 Other Topics

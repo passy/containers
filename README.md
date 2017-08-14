@@ -13,6 +13,9 @@
                                               Woof Woof, Inc.
 
 
+[![License](https://img.shields.io/badge/license-Apache--2.0%20OR%20MIT-blue.svg)](https://github.com/woofwoofinc/contributors#license)
+
+
 Containers
 ==========
 Build scripts for container stacks/pods.
@@ -21,6 +24,7 @@ Included containers:
 
 * ``base``: Base Ubuntu 16.04 with build tools installed.
 * ``zookeeper``: Single node Zookeeper for testing.
+* ``rust```: Rust development tools.
 
 
 License
@@ -86,5 +90,3 @@ contacting the project team at woofwoofinc@gmail.com.
 Unless you explicitly state otherwise, any contribution intentionally submitted
 for inclusion in the work by you, as defined in the Apache-2.0 license, shall be
 dual licensed as above, without any additional terms or conditions.
-
-
