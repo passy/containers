@@ -25,6 +25,7 @@ Included containers:
 * ``base``: Base Ubuntu 16.04 with build tools installed.
 * ``zookeeper``: Single node Zookeeper for testing.
 * ``rust```: Rust development tools.
+* ``openrefine``: OpenRefine data cleaning application.
 
 
 License
