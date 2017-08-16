@@ -7,8 +7,10 @@ set -xe
 # Setup
 ################################################################################
 
-mkdir -p zookeeper
-pushd zookeeper > /dev/null
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+TMP_DIR="$(mktemp -d -p "$DIR" zookeeper.XXXXXX)"
+pushd "$TMP_DIR" > /dev/null
 
 
 ################################################################################
@@ -88,8 +90,8 @@ acbuild end
 
 
 ################################################################################
-# Cleanup
+# Teardown
 ################################################################################
 
 popd > /dev/null
-rm -fr zookeeper
+rm -fr "$TMP_DIR"
