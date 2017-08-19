@@ -17,14 +17,14 @@ pushd "$TMP_DIR" > /dev/null
 # Download Base Image
 ################################################################################
 
-wget http://cdimage.ubuntu.com/ubuntu-base/releases/16.04/release/ubuntu-base-16.04.3-base-amd64.tar.gz
+wget http://cdimage.ubuntu.com/ubuntu-base/releases/17.04/release/ubuntu-base-17.04-base-amd64.tar.gz
 
 
 ################################################################################
 # Start Image Build
 ################################################################################
 
-acbuild begin ./ubuntu-base-16.04.3-base-amd64.tar.gz
+acbuild begin ./ubuntu-base-17.04-base-amd64.tar.gz
 acbuild set-name woofwoofinc.dog/rust
 
 
@@ -58,8 +58,7 @@ acbuild run -- /root/.cargo/bin/cargo install cargo-modules
 acbuild run -- /root/.cargo/bin/cargo install cargo-count
 
 acbuild run -- /root/.cargo/bin/rustup install nightly
-# 20170813 clippy_lints failing with error[E0599]: no method named `current_level` found for type `&T` in the current scope
-#acbuild run -- /root/.cargo/bin/rustup run nightly cargo install clippy
+acbuild run -- /root/.cargo/bin/rustup run nightly cargo install clippy
 
 
 ################################################################################

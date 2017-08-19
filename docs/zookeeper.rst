@@ -1,11 +1,9 @@
 Zookeeper
 =========
 Zookeeper_ is a distributed coordination and synchronization system. This
-container provides a single node test Zookeeper service using the Hadoop
-distribution provided by `Apache Bigtop`_.
+container provides a single node test Zookeeper service.
 
 .. _Zookeeper: https://zookeeper.apache.org
-.. _Apache Bigtop: http://bigtop.apache.org
 
 This container is useful for testing container tooling and frameworks since it
 is a simple non-interactive container.
@@ -64,7 +62,7 @@ replacing the IP address with the IP address found from ``rkt list`` earlier.
 
 ::
 
-    /usr/lib/zookeeper/bin/zkCli.sh -server 172.16.28.9:2181
+    /usr/share/zookeeper/bin/zkCli.sh -server 172.16.28.9:2181
 
 The following is an example Zookeeper client session which lists the Zookeeper
 keys present, the creates a new key, and fetches it to verify.

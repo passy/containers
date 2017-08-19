@@ -17,14 +17,14 @@ pushd "$TMP_DIR" > /dev/null
 # Download Base Image
 ################################################################################
 
-wget http://cdimage.ubuntu.com/ubuntu-base/releases/16.04/release/ubuntu-base-16.04.3-base-amd64.tar.gz
+wget http://cdimage.ubuntu.com/ubuntu-base/releases/17.04/release/ubuntu-base-17.04-base-amd64.tar.gz
 
 
 ################################################################################
 # Start Image Build
 ################################################################################
 
-acbuild begin ./ubuntu-base-16.04.3-base-amd64.tar.gz
+acbuild begin ./ubuntu-base-17.04-base-amd64.tar.gz
 acbuild set-name woofwoofinc.dog/base
 
 
