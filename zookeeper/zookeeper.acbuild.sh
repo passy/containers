@@ -59,7 +59,6 @@ acbuild set-exec -- /usr/share/zookeeper/bin/zkServer.sh start-foreground
 # Finalise Image
 ################################################################################
 
-acbuild run -- apt-get -qq autoclean
 acbuild run -- apt-get -qq autoremove
 acbuild run -- apt-get -qq clean
 
