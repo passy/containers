@@ -32,13 +32,12 @@ use:
       --port=zookeeper:2181 \
       woofwoofinc.dog/zookeeper
 
-In order to test out this container, we are going to start another copy of the
-container only in interactive mode and override the container executable to
-point to Bash instead of Zookeeper server. This will give us a shell with the
-Zookeeper client available which we can use to test the original container.
+In order to test out this container, we use the ``rkt enter`` to get a shell
+running on the container. We use this shell to start an interactive Zookeeper
+session with the localhost.
 
-Once the server container has started, find the IP address for it by listing
-the ``rkt`` containers running and reading from the ``NETWORK`` field.
+List the running ``rkt`` containers and take the UUID for the Zookeeper
+container just started.
 
 ::
 
@@ -46,23 +45,20 @@ the ``rkt`` containers running and reading from the ``NETWORK`` field.
     UUID      APP         IMAGE NAME                  STATE   CREATED         STARTED         NETWORKS
     a45b8815  zookeeper   woofwoofinc.dog/zookeeper   running 4 minutes ago   4 minutes ago   default:ip4=172.16.28.9
 
-Here the container IP address is ``172.16.28.9``.
+Here the container UUID is ``a45b8815``.
 
-Next, start an interactive Zookeeper container.
-
-::
-
-    sudo rkt run \
-      --interactive \
-      woofwoofinc.dog/zookeeper \
-      --exec /bin/bash
-
-To connect to the Zookeeper server container, run the following command
-replacing the IP address with the IP address found from ``rkt list`` earlier.
+Then enter the container.
 
 ::
 
-    /usr/share/zookeeper/bin/zkCli.sh -server 172.16.28.9:2181
+    sudo rkt enter a45b8815
+
+To connect to the Zookeeper server container, run the following command. It
+will use localhost as the default server.
+
+::
+
+    /usr/share/zookeeper/bin/zkCli.sh
 
 The following is an example Zookeeper client session which lists the Zookeeper
 keys present, the creates a new key, and fetches it to verify.
